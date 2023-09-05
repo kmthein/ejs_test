@@ -1,0 +1,25 @@
+.title {
+    text-align: center;
+    color: red;
+}
+.desc {
+    text-align: center;
+}
+label {
+    display: block;
+}
+.mx-auto {
+    margin: 0 auto;
+}
+a {
+    background: rgb(39, 39, 39);
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.post-box {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px 0;
+}
