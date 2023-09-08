@@ -8,7 +8,7 @@ const app = express();
 
 const postRoutes = require("./routes/post");
 
-const {adminRoutes} = require("./routes/admin");
+const adminRoutes = require("./routes/admin");
 
 app.set("view engine", "ejs");
 app.set("views", "views");

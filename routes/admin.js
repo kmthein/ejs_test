@@ -4,21 +4,10 @@ const router = express.Router();
 
 const path = require("path");
 
-let posts = [];
+const postsController = require("../controllers/posts");
 
-router.get('/create-post', (req, res) => {
-    // res.sendFile(path.join(__dirname, "..", "views", "create-post.html"));
-    res.render("addPost", {title: "Create Post"});
-})
+router.get('/create-post', postsController.renderCreatePost);
 
-router.post('/', (req, res) => {
-    const {title, description} = req.body;
-    posts.push({
-        title,
-        description
-    })
-    console.log(`Title is ${title} and description is ${description}.`);
-    res.redirect("/");
-})
+router.post('/', postsController.createPost);
 
-module.exports = { adminRoutes: router, posts };
+module.exports = router;
