@@ -4,6 +4,8 @@ const path = require("path");
 
 const bodyParser = require("body-parser");
 
+const sequelize = require("./utils/database");
+
 const app = express();
 
 const postRoutes = require("./routes/post");
@@ -31,4 +33,8 @@ app.use(postRoutes);
 
 app.use('/admin', adminRoutes);
 
-app.listen("8080");
+sequelize.sync().then((result) => {
+    app.listen("8080");  
+}).catch((err) => {
+    console.log(err);
+});
